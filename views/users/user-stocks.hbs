@@ -1,0 +1,12 @@
+{{#if userInSession}}
+<h2>Hi, {{userInSession.username}}!</h2>
+<h4>Here you have your stocks!</h4>
+<div>
+  {{#each userInSession.stocks}}
+  <h1>{{name}}</h1>
+  <canvas id="{{name}}"></canvas>
+  {{/each}}
+</div>
+{{else}}
+<p>Still no logged in user, sorry!</p>
+{{/if}}

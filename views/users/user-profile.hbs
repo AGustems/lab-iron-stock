@@ -1,0 +1,22 @@
+{{#if userInSession}}
+<h2>Welcome, {{ userInSession.username }}!</h2>
+<p>This is your profile page my friend!</p>
+<br>
+<h4>Here are your credencials!</h4>
+<ul>
+  <li>Username: {{userInSession.username}}</li>
+  <li>Email: {{userInSession.email}}</li>
+</ul>
+
+<form action="/user-stocks" method="POST">
+  <label for="name">Company Acronym: </label>
+  <input type="text" name="name" placeholder="Company Acronym">
+  <button type="submit">Add</button>
+</form>
+
+<button>
+  <a href="/userProfile">Reload the page</a>
+</button>
+{{else}}
+<p>Still no logged in user, sorry!</p>
+{{/if}}
